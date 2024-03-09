@@ -82,6 +82,10 @@
     "isBlocked": {
       "type": "boolean",
       "default": false
+    },
+    "isWorker": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

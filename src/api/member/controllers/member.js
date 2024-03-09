@@ -23,7 +23,7 @@ module.exports = createCoreController("api::member.member", ({ strapi }) => ({
       }
     );
     console.log(member);
-    if (!member || !member.isActive) {
+    if (!member || !member.isActive || member.isBlocked) {
       return ctx.notFound();
     }
     return ctx.send(member);

@@ -391,6 +391,7 @@ export interface ApiMemberMember extends Schema.CollectionType {
     volunteerRegion: Attribute.String & Attribute.Required;
     isActive: Attribute.Boolean & Attribute.DefaultTo<false>;
     isBlocked: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isWorker: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -737,7 +738,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -766,6 +766,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    fullName: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
