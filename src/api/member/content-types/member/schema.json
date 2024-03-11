@@ -18,15 +18,16 @@
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "adhaarNumber": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": false,
+      "unique": false
     },
     "fatherHusbandName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "isHusbandName": {
       "type": "boolean",
@@ -34,19 +35,19 @@
     },
     "country": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "state": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "mobileNumber": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "district": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "village": {
       "type": "string"
@@ -68,11 +69,11 @@
     },
     "skills": {
       "type": "json",
-      "required": true
+      "required": false
     },
     "volunteerRegion": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "isActive": {
       "type": "boolean",
@@ -86,6 +87,16 @@
     "isWorker": {
       "type": "boolean",
       "default": false
+    },
+    "memberRole": {
+      "type": "enumeration",
+      "enum": [
+        "Member",
+        "Worker",
+        "Supporter",
+        "Volunteer"
+      ],
+      "default": "Member"
     }
   }
 }

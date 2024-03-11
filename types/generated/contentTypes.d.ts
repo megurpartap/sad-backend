@@ -375,23 +375,27 @@ export interface ApiMemberMember extends Schema.CollectionType {
   };
   attributes: {
     fullName: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
-    adhaarNumber: Attribute.String & Attribute.Required & Attribute.Unique;
-    fatherHusbandName: Attribute.String;
+    email: Attribute.Email;
+    adhaarNumber: Attribute.String;
+    fatherHusbandName: Attribute.String & Attribute.Required;
     isHusbandName: Attribute.Boolean & Attribute.DefaultTo<false>;
-    country: Attribute.String & Attribute.Required;
-    state: Attribute.String & Attribute.Required;
-    mobileNumber: Attribute.String & Attribute.Required;
-    district: Attribute.String & Attribute.Required;
+    country: Attribute.String;
+    state: Attribute.String;
+    mobileNumber: Attribute.String;
+    district: Attribute.String;
     village: Attribute.String;
     tehsil: Attribute.String;
     fullAddress: Attribute.Text & Attribute.Required;
     photo: Attribute.Media & Attribute.Required;
-    skills: Attribute.JSON & Attribute.Required;
-    volunteerRegion: Attribute.String & Attribute.Required;
+    skills: Attribute.JSON;
+    volunteerRegion: Attribute.String;
     isActive: Attribute.Boolean & Attribute.DefaultTo<false>;
     isBlocked: Attribute.Boolean & Attribute.DefaultTo<false>;
     isWorker: Attribute.Boolean & Attribute.DefaultTo<false>;
+    memberRole: Attribute.Enumeration<
+      ['Member', 'Worker', 'Supporter', 'Volunteer']
+    > &
+      Attribute.DefaultTo<'Member'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
