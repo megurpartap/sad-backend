@@ -397,6 +397,8 @@ export interface ApiMemberMember extends Schema.CollectionType {
     > &
       Attribute.DefaultTo<'Member'>;
     uid: Attribute.UID & Attribute.CustomField<'plugin::field-nanoid.nanoid'>;
+    doj: Attribute.Date;
+    manualId: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

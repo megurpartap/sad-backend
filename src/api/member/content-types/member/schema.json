@@ -63,7 +63,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "skills": {
       "type": "json",
@@ -88,12 +90,24 @@
     },
     "memberRole": {
       "type": "enumeration",
-      "enum": ["Member", "Worker", "Supporter", "Volunteer"],
+      "enum": [
+        "Member",
+        "Worker",
+        "Supporter",
+        "Volunteer"
+      ],
       "default": "Member"
     },
     "uid": {
       "type": "customField",
       "customField": "plugin::field-nanoid.nanoid"
+    },
+    "doj": {
+      "type": "date"
+    },
+    "manualId": {
+      "type": "string",
+      "unique": true
     }
   }
 }
